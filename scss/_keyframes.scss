@@ -1,0 +1,29 @@
+@keyframes moveScrollBanner {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    70% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes movePath {
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes animationLeft {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes animationRight {
+    100% {
+        transform: translateX(100vw);
+    }
+}

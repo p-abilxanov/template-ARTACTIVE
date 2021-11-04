@@ -1,0 +1,749 @@
+@media only screen and (min-width: 1050px) {
+    .banner__img {
+        img {
+            @include blockSize(500px, auto);
+        }
+    }
+}
+
+@media only screen and (max-width: 1049px) and (min-width: 939px) {
+    .banner__img {
+        img {
+            @include blockSize(45vw, auto);
+        }
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .firstPage {
+        @include flexbox(column, none, none);
+    }
+
+    .header {
+        height: 10%;
+        @include flexbox(none, space-between, center);
+        padding: $headerPadding;
+
+        .header__logo {
+            a {
+                font-size: $headerLogoFontSize;
+            }
+        }
+
+        label[for="hamburger-menu"] {
+            display: none;
+        }
+
+        .header__nav {
+            @include flexbox(none, space-between, center);
+            z-index: 4;
+
+            .hamburgerMenu-main {
+                @include flexbox(none, space-between, center);
+
+                label[for="hamburger-menu"] {
+                    display: none;
+                }
+            }
+
+            ul {
+                @include flexbox(none, space-between, center);
+                margin-right: $headerNavUlMarginRight;
+
+                li {
+                    a {
+                        font-size: $headerNavUlFontSize;
+                    }
+
+                    &:nth-child(n+2) {
+                        margin-left: $headerNavUlMarginLeft;
+                    }
+                }
+            }
+
+            .header__tel {
+                a {
+                    font-size: $headerTelLinkFontSize;
+                    margin-right: $headerTelLinkMarginRight;
+                }
+
+                label:not(.header__form label) {
+                    font-size: $headerTelLabelFontSize;
+                    border-radius: $headerTelLabelBorderRadius;
+                    padding: $headerTelLabelPadding;
+                }
+            }
+        }
+    }
+
+    .header__form {
+        .form__main {
+            @include blockSize($headerFormMainSize, $headerFormMainSize);
+            padding: $headerFormMainPadding;
+
+            .form-block {
+                padding: $headerFormBlockPadding;
+            }
+
+            .form__subtitle {
+                font-size: $headerFormSubtitleFontSize;
+            }
+
+            .form__title {
+                font-size: $headerFormTitleFontSize;
+            }
+
+            form {
+                padding-top: $headerFormPaddingTop;
+
+                input {
+                    padding: $headerFormInputPadding;
+                    margin-bottom: $headerFormInputMarginBottom;
+                    font-size: $headerFormInputFontSize;
+
+                    &::placeholder {
+                        font-size: $headerFormInputPlaceholderFontSize;
+                    }
+                }
+
+                button {
+                    padding: $headerFormBtnPadding;
+                    border-radius: $headerFormBtnBorderRadius;
+                    font-size: $headerFormBtnFontSize;
+                }
+            }
+        }
+    }
+
+    .banner {
+        @include flexbox(column, space-evenly, none);
+        height: 90%;
+        padding-bottom: $bannerPaddingBottom;
+
+        .banner__main {
+            @include flexbox(none, space-between, center);
+            padding-bottom: $bannerMainPaddingBottom;
+
+            .banner__text {
+                .banner__title {
+                    font-size: $bannerTitleFontSize;
+                }
+
+                .banner__content {
+                    padding: $bannerContentPadding;
+                    font-size: $bannerContentFontSize;
+                    width: $bannerContentWidth;
+                }
+
+                .banner__order {
+                    @include flexbox(none, none, center);
+
+                    label {
+                        font-size: $bannerOrderLabelFontSize;
+                        border-radius: $bannerOrderLabelBorderRadius;
+                        padding: $bannerOrderLabelPadding;
+                    }
+
+                    span {
+                        padding-left: $bannerOrderSpanPaddingLeft;
+                        font-size: $bannerOrderSpanFontSize;
+                        width: $bannerOrderSpanWidth;
+                    }
+                }
+            }
+        }
+
+        .banner__scroll {
+            align-self: center;
+            @include blockSize($bannerScrollWidth, $bannerScrollHeight);
+            border-radius: $bannerScrollBorderRadius;
+            border: $bannerScrollBorder;
+            @include flexbox(none, center, none);
+            padding: $bannerScrollPadding;
+
+            span {
+                animation: moveScrollBanner 1.5s linear infinite;
+                @include blockSize(1px, 5px);
+                background-color: $bannerScrollSpanBgColor;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 710px) {
+    .firstPage {
+        @include flexbox(column, none, none);
+    }
+
+    .header {
+        height: 10%;
+        @include flexbox(none, space-between, center);
+        padding: $headerPadding;
+        position: relative;
+
+        .header__logo {
+            a {
+                font-size: $headerLogoFontSize;
+            }
+        }
+
+        input[id="hamburger-menu"] {
+            &:checked~.header__nav {
+                left: 0;
+            }
+        }
+
+        label[for="hamburger-menu"] {
+            span {
+                display: block;
+                @include blockSize(25px, 2px);
+                background-color: #fff;
+                border-radius: 1px;
+
+                &:nth-child(n+2) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .header__nav {
+            @include flexbox(none, flex-end, none);
+            @include blockSize(100vw, 100vh);
+            position: fixed;
+            top: 0;
+            left: 100%;
+            z-index: 4;
+            transition: left .5s;
+            background-color: rgba($color: #000000, $alpha: .5);
+
+            .hamburgerMenu-main {
+                background-color: #fff;
+                @include blockSize(none, 100%);
+                min-width: 40%;
+                @include flexbox(column, none, none);
+                padding: $hamburgerMenuPadding;
+
+                label[for="hamburger-menu"] {
+                    align-self: flex-end;
+                    display: block;
+                }
+
+                ul {
+                    @include flexbox(column, none, none);
+                    margin-right: $headerNavUlMarginRight;
+
+                    li {
+                        margin: $hamburgerMenuLinkMargin;
+
+                        a {
+                            font-size: $hamburgerMenuLinkFontSize;
+                            color: $hamburgerMenuLinkColor;
+                        }
+                    }
+                }
+
+                .header__tel {
+                    @include flexbox(column, none, none);
+                    padding-right: 45px;
+                    padding-top: 75px;
+
+                    a {
+                        font-size: $headerTelLinkFontSize;
+                        margin-right: $headerTelLinkMarginRight;
+                        color: $hamburgerMenuLinkColor;
+                        padding-bottom: 30px;
+                    }
+
+                    label:not(.header__form .form__main label) {
+                        font-size: $headerTelLabelFontSize;
+                        border-radius: $headerTelLabelBorderRadius;
+                        padding: $headerTelLabelPadding;
+                        color: $headerTelLabelColor;
+                        border: $headerTelLabelBorder;
+                    }
+                }
+            }
+        }
+    }
+
+    .header__form {
+        .form__main {
+            padding: $headerFormMainPadding;
+
+            label {
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            .form-block {
+                padding: $headerFormBlockPadding;
+            }
+
+            .form__subtitle {
+                font-size: $headerFormSubtitleFontSize;
+            }
+
+            .form__title {
+                font-size: $headerFormTitleFontSize;
+            }
+
+            form {
+                padding-top: $headerFormPaddingTop;
+
+                input {
+                    padding: $headerFormInputPadding;
+                    margin-bottom: $headerFormInputMarginBottom;
+                    font-size: $headerFormInputFontSize;
+
+                    &::placeholder {
+                        font-size: $headerFormInputPlaceholderFontSize;
+                    }
+                }
+
+                button {
+                    padding: $headerFormBtnPadding;
+                    border-radius: $headerFormBtnBorderRadius;
+                    font-size: $headerFormBtnFontSize;
+                }
+            }
+        }
+    }
+
+    .banner {
+        height: 90%;
+        @include flexbox(column, center, none);
+        padding-bottom: $bannerPaddingBottom;
+
+        .banner__main {
+            @include flexbox(none, space-between, center);
+            padding-bottom: $bannerMainPaddingBottom;
+
+            .banner__text {
+                @include flexbox(column, none, none);
+
+                .banner__title {
+                    font-size: $mobileBannerTitleFontSize;
+                }
+
+                .banner__content {
+                    padding: $mobileBannerContentPadding;
+                    font-size: $mobileBannerContentFontSize;
+                    max-width: $mobileBannerContentWidth;
+                }
+
+                .banner__order {
+                    @include flexbox(column, none, flex-start);
+
+                    label {
+                        font-size: $mobileBannerOrderLabelFontSize;
+                        border-radius: $mobileBannerOrderLabelBorderRadius;
+                        padding: $mobileBannerOrderLabelPadding;
+                    }
+
+                    span {
+                        padding: $mobileBannerOrderSpanPadding;
+                        font-size: $mobileBannerOrderSpanFontSize;
+                        width: $mobileBannerOrderSpanWidth;
+                    }
+                }
+            }
+        }
+
+        .banner__scroll {
+            align-self: center;
+            @include blockSize($bannerScrollWidth, $bannerScrollHeight);
+            border-radius: $bannerScrollBorderRadius;
+            border: $bannerScrollBorder;
+            @include flexbox(none, center, none);
+            padding: $bannerScrollPadding;
+
+            span {
+                animation: moveScrollBanner 1.5s linear infinite;
+                @include blockSize(1px, 5px);
+                background-color: $bannerScrollSpanBgColor;
+            }
+        }
+    }
+
+    .banner__img {
+        img {
+            @include blockSize(50vw, auto);
+        }
+    }
+}
+
+@media only screen and (max-width: 709px) and (min-width: 540px) {
+    .firstPage {
+        @include flexbox(column, none, none);
+    }
+
+    .header {
+        height: 10%;
+        @include flexbox(none, space-between, center);
+        padding: $headerPadding;
+        position: relative;
+
+        .header__logo {
+            a {
+                font-size: $headerLogoFontSize;
+            }
+        }
+
+        input[id="hamburger-menu"] {
+            &:checked~.header__nav {
+                left: 0;
+            }
+        }
+
+        label[for="hamburger-menu"] {
+            span {
+                display: block;
+                @include blockSize(25px, 2px);
+                background-color: #fff;
+                border-radius: 1px;
+
+                &:nth-child(n+2) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .header__nav {
+            @include flexbox(none, flex-end, none);
+            @include blockSize(100vw, 100vh);
+            position: fixed;
+            top: 0;
+            left: 100%;
+            z-index: 4;
+            transition: left .5s;
+            background-color: rgba($color: #000000, $alpha: .5);
+
+            .hamburgerMenu-main {
+                background-color: #fff;
+                @include blockSize(none, 100%);
+                min-width: 40%;
+                @include flexbox(column, none, none);
+                padding: $hamburgerMenuPadding;
+
+                label[for="hamburger-menu"] {
+                    align-self: flex-end;
+                    display: block;
+                }
+
+                ul {
+                    @include flexbox(column, none, none);
+                    margin-right: $headerNavUlMarginRight;
+
+                    li {
+                        margin: $hamburgerMenuLinkMargin;
+
+                        a {
+                            font-size: $hamburgerMenuLinkFontSize;
+                            color: $hamburgerMenuLinkColor;
+                        }
+                    }
+                }
+
+                .header__tel {
+                    @include flexbox(column, none, none);
+                    padding-right: $headerTelPaddingRight;
+                    padding-top: $headerTelPaddingTop;
+
+                    a {
+                        font-size: $headerTelLinkFontSize;
+                        margin-right: $headerTelLinkMarginRight;
+                        color: $hamburgerMenuLinkColor;
+                        padding-bottom: $headerTelLinkPaddingBottom;
+                    }
+
+                    label:not(.header__form .form__main label) {
+                        font-size: $headerTelLabelFontSize;
+                        border-radius: $headerTelLabelBorderRadius;
+                        padding: $headerTelLabelPadding;
+                        color: $headerTelLabelColor;
+                        border: $headerTelLabelBorder;
+                    }
+                }
+            }
+        }
+    }
+
+    .header__form {
+        .form__main {
+            padding: $headerFormMainPadding;
+
+            label {
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            .form-block {
+                padding: $headerFormBlockPadding;
+            }
+
+            .form__subtitle {
+                font-size: $headerFormSubtitleFontSize;
+            }
+
+            .form__title {
+                font-size: $headerFormTitleFontSize;
+            }
+
+            form {
+                padding-top: $headerFormPaddingTop;
+
+                input {
+                    padding: $headerFormInputPadding;
+                    margin-bottom: $headerFormInputMarginBottom;
+                    font-size: $headerFormInputFontSize;
+
+                    &::placeholder {
+                        font-size: $headerFormInputPlaceholderFontSize;
+                    }
+                }
+
+                button {
+                    padding: $headerFormBtnPadding;
+                    border-radius: $headerFormBtnBorderRadius;
+                    font-size: $headerFormBtnFontSize;
+                }
+            }
+        }
+    }
+
+    .banner {
+        height: 90%;
+        @include flexbox(column, center, none);
+        padding-bottom: $bannerPaddingBottom;
+
+        .banner__main {
+            @include flexbox(column, space-between, center);
+
+            .banner__text {
+                @include flexbox(column, none, none);
+
+                .banner__title {
+                    font-size: $mobileBannerTitleFontSize;
+                }
+
+                .banner__content {
+                    padding: $mobileBannerContentPadding;
+                    font-size: $mobileBannerContentFontSize;
+                }
+
+                .banner__order {
+                    @include flexbox(column, none, flex-start);
+
+                    label {
+                        font-size: $mobileBannerOrderLabelFontSize;
+                        border-radius: $mobileBannerOrderLabelBorderRadius;
+                        padding: $mobileBannerOrderLabelPadding;
+                    }
+
+                    span {
+                        padding: $mobileBannerOrderSpanPadding;
+                        font-size: $mobileBannerOrderSpanFontSize;
+                    }
+                }
+            }
+        }
+
+        .banner__scroll {
+            display: none;
+        }
+    }
+
+    .banner__img {
+        img {
+            @include blockSize(70vw, auto);
+        }
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .firstPage {
+        @include flexbox(column, none, none);
+    }
+
+    .header {
+        height: 10%;
+        @include flexbox(none, space-between, center);
+        padding: calc(.5em + 5vw) 0;
+        position: relative;
+
+        .header__logo {
+            a {
+                font-size: calc(.3em + 3vw);
+            }
+        }
+
+        input[id="hamburger-menu"] {
+            &:checked~.header__nav {
+                left: 0;
+            }
+        }
+
+        label[for="hamburger-menu"] {
+            span {
+                display: block;
+                @include blockSize(25px, 2px);
+                background-color: #fff;
+                border-radius: 1px;
+
+                &:nth-child(n+2) {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        .header__nav {
+            @include flexbox(none, flex-end, none);
+            @include blockSize(100vw, 100vh);
+            position: fixed;
+            top: 0;
+            left: 100%;
+            z-index: 4;
+            transition: left .5s;
+            background-color: rgba($color: #000000, $alpha: .5);
+
+            .hamburgerMenu-main {
+                background-color: #fff;
+                @include blockSize(60%, 100%);
+                @include flexbox(column, none, none);
+                padding: calc(.3em + 4vw) calc(.3em + 3vw) calc(.3em + 4vw) calc(.5em + 5vw);
+
+                label[for="hamburger-menu"] {
+                    align-self: flex-end;
+                    display: block;
+                }
+
+                ul {
+                    @include flexbox(column, none, none);
+                    margin-right: calc(.5em + 3vw);
+
+                    li {
+                        margin: calc(.3em + 3vw) 0;
+
+                        a {
+                            font-size: calc(.2em + 2vw);
+                            color: rgb(51, 51, 51);
+                        }
+                    }
+                }
+
+                .header__tel {
+                    @include flexbox(column, none, none);
+                    padding-right: calc(.4em + 4vw);
+                    padding-top: calc(.5em + 5vw);
+
+                    a {
+                        font-size: calc(.2em + 2.5vw);
+                        margin-right: calc(.3em + 3vw);
+                        color: rgb(51, 51, 51);
+                        padding-bottom: calc(.4em + 4vw);
+                    }
+
+                    label:not(.header__form .form__main label) {
+                        font-size: calc(.2em + 1.5vw);
+                        border-radius: calc(.3em + 3vw);
+                        padding: calc(.2em + 1.5vw) calc(.3em + 3vw);
+                        color: rgb(251, 2, 117);
+                        border: 2px solid rgb(251, 2, 117);
+                    }
+                }
+            }
+        }
+    }
+
+    .header__form {
+        .form__main {
+            @include blockSize(60vw, auto);
+            padding: calc(.2em + 2vw) calc(.2em + 2vw) calc(.3em + 4vw) calc(.2em + 2vw);
+
+            label {
+                border: none !important;
+                padding: 0 !important;
+            }
+
+            .form-block {
+                padding: 0 calc(.4em + 4vw);
+            }
+
+            .form__subtitle {
+                font-size: calc(.2em + 2.5vw);
+            }
+
+            .form__title {
+                font-size: calc(.3em + 3vw);
+            }
+
+            form {
+                padding-top: calc(.4em + 4vw);
+
+                input {
+                    padding: calc(.2em + 1.5vw) calc(.2em + 2vw);
+                    margin-bottom: calc(.4em + 4vw);
+                    font-size: calc(.2em + 2vw);
+
+                    &::placeholder {
+                        font-size: calc(.2em + 2vw);
+                    }
+                }
+
+                button {
+                    padding: calc(.3em + 2.5vw) calc(.2em + 1.5vw) calc(.3em + 2.5vw) calc(.2em + 1.5vw);
+                    border-radius: calc(.4em + 4vw);
+                    font-size: calc(.2em + 2.5vw);
+                }
+            }
+        }
+    }
+
+    .banner {
+        height: 90%;
+        @include flexbox(column, center, none);
+        padding-bottom: calc(.6em + 6vw);
+
+        .banner__main {
+            @include flexbox(column, space-between, center);
+
+            .banner__text {
+                @include flexbox(column, none, none);
+
+                .banner__title {
+                    font-size: calc(.5em + 5vw);
+                }
+
+                .banner__content {
+                    padding: calc(.3em + 3vw) 0 calc(.4em + 4vw) 0;
+                    font-size: calc(.3em + 3vw);
+                }
+
+                .banner__order {
+                    @include flexbox(column, none, flex-start);
+
+                    label {
+                        font-size: calc(.2em + 2vw);
+                        border-radius: calc(.4em + 4vw);
+                        padding: calc(.2em + 2vw) calc(.4em + 4vw);
+                    }
+
+                    span {
+                        padding: calc(.3em + 3vw) 0;
+                        font-size: calc(.2em + 2vw);
+                    }
+                }
+            }
+        }
+
+        .banner__scroll {
+            display: none;
+        }
+    }
+
+    .banner__img {
+        img {
+            @include blockSize(90vw, auto);
+        }
+    }
+}

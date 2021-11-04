@@ -1,0 +1,58 @@
+.polygraph__main {
+    .polygraph__title {
+        font-family: $fontFamilyMullerMediumRegular;
+        color: $polygraphTitleColor;
+        line-height: 1.2;
+    }
+
+    .polygraph__text {
+        p {
+            font-family: $fontFamilyOpenSansRegular;
+            color: $polygraphTextColor;
+            line-height: 1.714;
+        }
+    }
+}
+
+.polygraph__form {
+    .polygraphForm__subtitle {
+        font-family: $fontFamilyOpenSansItalic;
+        color: $polygraphFormSubtitleColor;
+        line-height: 1.881;
+    }
+
+    .polygraphForm__title {
+        font-family: $fontFamilyOpenSansSemiBold;
+        color: $polygraphFormSubtitleColor;
+        line-height: 1.505;
+    }
+
+    form {
+        input {
+            color: $polygraphFormInputColor;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: $polygraphFormInputBorderBottom;
+            transition: border-color .5s;
+            font-family: $fontFamilyOpenSansBold;
+
+            &:focus {
+                border-color: $polygraphFormInputFocusBorderColor;
+            }
+
+            &::placeholder {
+                color: $polygraphFormInputPlaceholder;
+                font-family: $fontFamilyOpenSansItalic;
+            }
+        }
+
+        button {
+            background-color: $polygraphFormBtnBgColor;
+            font-family: $fontFamilyOpenSansBold;
+            color: $polygraphFormBtnColor;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}

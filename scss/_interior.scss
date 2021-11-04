@@ -1,0 +1,22 @@
+.interior__main {
+    .interior__title {
+        font-family: $fontFamilyMullerMediumRegular;
+        color: $interiorTitleColor;
+        line-height: 1.2;
+    }
+
+    .interior__text {
+        font-family: $fontFamilyOpenSansRegular;
+        color: $interiorTextColor;
+        line-height: 1.714;
+    }
+
+    label {
+        background-color: $interiorBtnBgColor;
+        font-family: $fontFamilyOpenSansBold;
+        color: $interiorBtnColor;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: center;
+    }
+}

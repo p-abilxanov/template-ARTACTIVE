@@ -1,0 +1,160 @@
+@media only screen and (min-width: 940px) {
+    .comment {
+        .container {
+            .comment__title {
+                font-size: $commentTitleFontSize;
+                padding-top: $commentTitlePaddingTop;
+            }
+        }
+    }
+
+    .commment__slide {
+        .comment__item {
+            margin: $commentItemMargin;
+            padding: $commentItemPadding;
+            @include flexbox(none, none, none);
+
+            .comment__img {
+                padding-right: $commentImgPaddingRight;
+            }
+
+            .comment__content {
+                .comment__text {
+                    font-size: $commentTextFontSize;
+                }
+
+                .comment__name {
+                    span {
+                        font-size: $commentNameFontSize;
+                    }
+
+                    a {
+                        font-size: $commentLinkFontSize;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            bottom: $commentSlickArrowBOttom;
+        }
+
+        .slick-next {
+            left: $commentSlickNextLeft;
+        }
+
+        .slick-prev {
+            left: $commentSlickPrevLeft;
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 540px) {
+    .comment {
+        .container {
+            .comment__title {
+                font-size: $commentTitleFontSize;
+                padding-top: $commentTitlePaddingTop720;
+            }
+        }
+    }
+
+    .commment__slide {
+        .comment__item {
+            margin: $commentItemMargin720;
+            padding: $commentItemPadding720;
+            @include flexbox(none, none, none);
+
+            .comment__img {
+                padding-right: $commentImgPaddingRight720;
+            }
+
+            .comment__content {
+                .comment__text {
+                    font-size: $commentTextFontSize;
+                }
+
+                .comment__name {
+                    span {
+                        font-size: $commentNameFontSize;
+                    }
+
+                    a {
+                        font-size: $commentLinkFontSize;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            bottom: $commentSlickArrowBOttom;
+        }
+
+        .slick-next {
+            left: $commentSlickNextLeft720;
+        }
+
+        .slick-prev {
+            left: $commentSlickPrevLeft720;
+        }
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .comment {
+        .container {
+            .comment__title {
+                display: none;
+            }
+        }
+    }
+
+    .commment__slide {
+        .comment__item {
+            margin: calc(.4em + 4vw) 10px calc(2em + 10vw) 10px;
+            padding: calc(.5em + 5vw) calc(.4em + 4vw) calc(.4em + 4vw) calc(.2em + 3vw);
+            @include flexbox(column, none, none);
+
+            .comment__img {
+                padding-bottom: calc(.4em + 4vw);
+                align-self: center;
+            }
+
+            .comment__content {
+                .comment__text {
+                    font-size: calc(.2em + 2vw);
+                }
+
+                .comment__name {
+                    span {
+                        font-size: calc(.2em + 2.5vw);
+                    }
+
+                    a {
+                        font-size: calc(.2em + 2.5vw);
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            bottom: calc(.4em + 4vw);
+        }
+
+        .slick-next {
+            right: 15px;
+
+            &::after {
+                @include blockSize(calc(1em + 8vw), auto);
+            }
+        }
+
+        .slick-prev {
+            left: 15px;
+
+            &::after {
+                @include blockSize(calc(1em + 8vw), auto);
+            }
+        }
+    }
+}

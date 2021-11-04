@@ -1,0 +1,216 @@
+@media only screen and (min-width: 940px) {
+    .polygraph {
+        background: $polygraphBgUrl;
+        background-repeat: no-repeat;
+        background-position: $polygraphBgPosition;
+        background-size: $polygraphBgSize;
+        padding: $polygraphPadding;
+
+        .container {
+            @include flexbox(none, none, none);
+        }
+    }
+
+    .polygraph__main {
+        .polygraph__title {
+            max-width: $polygraphTitleMaxWidth;
+            font-size: $polygraphTitleFontSize;
+            padding-bottom: $polygraphTitlePaddingBottom;
+        }
+
+        .polygraph__text {
+            max-width: $polygraphTextMaxWidth;
+
+            p {
+                padding-top: $polygraphTextPaddingTop;
+                font-size: $polygraphTextFontSize;
+            }
+        }
+    }
+
+    .polygraph__form {
+        padding-top: $polygraphFormPaddingTop;
+
+        .polygraphForm__subtitle {
+            font-size: $polygraphFormSubtitleFontSize;
+        }
+
+        .polygraphForm__title {
+            font-size: $polygraphFormTitleFontSize;
+            padding-bottom: $polygraphFormTitlePaddingBottom;
+        }
+
+        form {
+            input {
+                font-size: $polygraphFormInputFontSize;
+                padding: $polygraphFormInputPadding;
+                margin-right: $polygraphFormInputMarginRight;
+
+                &::placeholder {
+                    font-size: $polygraphFormInputPlaceholderFontSize;
+                }
+            }
+
+            button {
+                padding: $polygraphFormBtnPadding;
+                border-radius: $polygraphFormBtnBorderRadius;
+                font-size: $polygraphFormBtnFontSize;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 540px) {
+    .polygraph {
+        background: $polygraphBgUrl720;
+        background-repeat: no-repeat;
+        background-position: $polygraphBgPosition720;
+        background-size: $polygraphBgSize720;
+        padding: $polygraphPadding720;
+
+        .container {
+            @include flexbox(none, none, none);
+        }
+    }
+
+    .polygraph__main {
+        .polygraph__title {
+            max-width: $polygraphTitleMaxWidth;
+            font-size: $polygraphTitleFontSize;
+            padding-bottom: $polygraphTextPaddingTop;
+        }
+
+        .polygraph__text {
+            max-width: $polygraphTextMaxWidth720;
+
+            p {
+                padding-top: $polygraphFormPaddingTop720;
+                font-size: $polygraphTextFontSize;
+            }
+        }
+    }
+
+    .polygraph__form {
+        padding-top: $polygraphFormPaddingTop720;
+
+        .polygraphForm__subtitle {
+            font-size: $polygraphFormSubtitleFontSize;
+        }
+
+        .polygraphForm__title {
+            font-size: $polygraphFormTitleFontSize;
+            padding-bottom: $polygraphFormTitlePaddingBottom720;
+            max-width: $polygraphFormTitleMaxWidth720;
+        }
+
+        form {
+            @include flexbox(column, none, flex-start);
+
+            input {
+                margin-top: $polygraphFormInputMarginTop;
+                font-size: $polygraphFormInputFontSize;
+                padding: $polygraphFormInputPadding;
+
+                &::placeholder {
+                    font-size: $polygraphFormInputPlaceholderFontSize;
+                }
+            }
+
+            button {
+                margin-top: $polygraphFormBtnMarginTop;
+                padding: $polygraphFormBtnPadding;
+                border-radius: $polygraphFormBtnBorderRadius;
+                font-size: $polygraphFormBtnFontSize;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .polygraph {
+        background: $polygraphBgUrl320;
+        background-repeat: no-repeat;
+        background-position: $polygraphBgPosition320;
+        background-size: $polygraphBgSize320;
+        padding: calc(.5em + 5vw) 0;
+
+        .container {
+            @include flexbox(none, none, none);
+        }
+    }
+
+    .polygraph__main {
+        .polygraph__title {
+            font-size: calc(.4em + 4vw);
+            padding-bottom: calc(.3em + 3.5vw);
+        }
+
+        .polygraph__text {
+            p {
+                padding-top: calc(.3em + 3.5vw);
+                font-size: calc(.2em + 2vw);
+            }
+        }
+    }
+
+    .polygraph__form {
+        padding-top: 80vw;
+
+        .polygraphForm__subtitle {
+            font-size: calc(.2em + 2.5vw);
+        }
+
+        .polygraphForm__title {
+            font-size: calc(.3em + 3vw);
+            padding-bottom: calc(.3em + 3vw);
+        }
+
+        form {
+            @include flexbox(column, none, none);
+
+            input {
+                margin-top: calc(.3em + 3vw);
+                font-size: calc(.2em + 2vw);
+                padding: calc(.1em + 1.5vw) calc(.2em + 2vw);
+
+                &::placeholder {
+                    font-size: calc(.2em + 2vw);
+                }
+            }
+
+            button {
+                margin-top: calc(.3em + 4vw);
+                padding: calc(.3em + 2.5vw) 0;
+                border-radius: calc(.4em + 5vw);
+                font-size: calc(.3em + 2.5vw);
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .polygraph {
+        position: relative;
+        @include flexbox(none, center, none);
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            @include blockSize(2px, 80px);
+            background-color: rgb(136, 62, 202);
+            position: absolute;
+        }
+
+        &::before {
+            margin-left: -7px;
+            top: -65px;
+        }
+
+        &::after {
+            margin-left: 7px;
+            top: -15px;
+        }
+    }
+}

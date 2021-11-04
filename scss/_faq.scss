@@ -1,0 +1,79 @@
+.faq {
+    background: $faqBgUrl;
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .container {
+        @include flexbox(column, none, none);
+
+        .faq__title {
+            font-family: $fontFamilyMullerExtraBoldRegular;
+            color: $faqTitleColor;
+            line-height: 1.2;
+        }
+    }
+}
+
+.faq__main {
+    .faq__item {
+        .faqItem__title {
+            font-family: $fontFamilyOpenSansSemiBold;
+            color: $faqItemTitleColor;
+            line-height: 1.505;
+        }
+
+        .faqItem__text {
+            font-family: $fontFamilyOpenSansRegular;
+            color: $faqItemTextColor;
+            line-height: 1.714;
+        }
+    }
+}
+
+.faq__form {
+    border-radius: $faqFormBorderRadius;
+    overflow: hidden;
+
+    .faqForm__main {
+        .faqForm__subtitle {
+            font-family: $fontFamilyOpenSansItalic;
+            color: $faqFormSubtitleColor;
+            line-height: 1.881;
+        }
+
+        .faqForm__title {
+            font-family: $fontFamilyOpenSansSemiBold;
+            color: $faqFormTitleColor;
+            line-height: 1.505;
+        }
+
+        form {
+            input {
+                color: $faqFormInputColor;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                border-bottom: $faqFormInputBorderBottom;
+                transition: border-color .5s;
+                font-family: $fontFamilyOpenSansBold;
+
+                &:focus {
+                    border-color: $faqFormInputFocusBorderColor;
+                }
+
+                &::placeholder {
+                    color: $faqFormInputColor;
+                    font-family: $fontFamilyOpenSansItalic;
+                }
+            }
+
+            button {
+                background-color: $faqFormBtnBgColor;
+                font-family: $fontFamilyOpenSansBold;
+                color: $faqFormBtnColor;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+button,
+label {
+    cursor: pointer;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+.firstPage {
+    background: $firstPageBgUrl;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include flexbox(column, none, none);
+}
+
+.container {
+    height: 100%;
+}
+
+.header {
+    .header__logo {
+        a {
+            font-family: $fontFamilyOpenSansExtraBold;
+            color: $headerLogoColor;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+    }
+
+    input[name="hamburger-menu"] {
+        display: none;
+    }
+
+    .header__nav {
+        ul {
+            list-style: none;
+            li {
+                a {
+                    font-family: $fontFamilyOpenSansSemiBold;
+                    color: $headerLogoColor;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        .header__tel {
+            a {
+                font-family: $fontFamilyOpenSansBold;
+                color: $headerLogoColor;
+                text-transform: uppercase;
+                line-height: 1.2;
+            }
+
+            input[name="header-order-tel"] {
+                display: none;
+
+                &:checked {
+                    &~.header__form {
+                        right: 0;
+                    }
+                }
+            }
+
+            label:not(.header__form label) {
+                border: 2px solid $headerLogoColor;
+                font-family: $fontFamilyOpenSansExtraBold;
+                color: $headerLogoColor;
+                text-transform: uppercase;
+                text-align: center;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
+.header__form {
+    background-color: $headerFormBg;
+    @include blockSize(100vw, 100vh);
+    position: fixed;
+    top: 0;
+    right: 100%;
+    transition: right .5s;
+    @include flexbox(none, center, center);
+
+    .form__main {
+        @include flexbox(column, none, center);
+        border-radius: 10px;
+        background-color: $headerFormMainBgColor;
+        box-shadow: $headerFormMainBoxShadow;
+
+        label[for="header-order-tel"] {
+            padding: 0;
+            border: none;
+            align-self: flex-end;
+            display: block;
+        }
+
+        .form-block {
+            width: 100%;
+            @include flexbox(column, none, center);
+        }
+
+        .form__subtitle {
+            align-self: flex-start;
+            font-family: $fontFamilyOpenSansItalic;
+            color: $headerSubtitleColor;
+            line-height: 1.881;
+        }
+
+        .form__title {
+            align-self: flex-start;
+            font-family: $fontFamilyOpenSansSemiBold;
+            color: $headerSubtitleColor;
+            line-height: 1.505;
+        }
+
+        form {
+            width: 100%;
+            @include flexbox(column, none, center);
+
+            input {
+                width: 100%;
+                font-family: $fontFamilyOpenSansBold;
+                color: $headerSubtitleColor;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                border-bottom: $formInputBorderBottom;
+                transition: border-color .5s;
+
+                &:focus {
+                    border-color: $formInputFocusBorderColor;
+                }
+
+                &::placeholder {
+                    font-family: $fontFamilyOpenSansItalic;
+                    color: $formInputPlaceholderColor;
+                }
+            }
+
+            button {
+                width: 100%;
+                background-color: $formBtnBgColor;
+                font-family: $fontFamilyOpenSansBold;
+                color: $formBtnColor;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.banner {
+    .banner__main {
+        .banner__title {
+            @include flexbox(column, none, none);
+            font-family: $fontFamilyMullerExtraBoldRegular;
+            color: $bannerTitleColor;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .banner__content {
+            font-family: $fontFamilyMullerMediumRegular;
+            color: $bannerTitleColor;
+            line-height: 1.2;
+        }
+
+        .banner__order {
+            label {
+                font-family: $fontFamilyOpenSansBold;
+                color: $bannerTitleColor;
+                text-transform: uppercase;
+                line-height: 1.2;
+                background-color: $formBtnBgColor;
+            }
+
+            span {
+                font-family: $fontFamilyOpenSansRegular;
+                color: $bannerTitleColor;
+                line-height: 1.2;
+                display: block;
+            }
+        }
+    }
+}

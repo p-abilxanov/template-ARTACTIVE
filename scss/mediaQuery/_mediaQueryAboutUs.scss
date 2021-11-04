@@ -1,0 +1,169 @@
+@media only screen and (min-width: 940px) {
+    .aboutUs {
+        padding: $aboutUsPadding;
+
+        .container {
+            @include flexbox(none, space-between, none);
+        }
+    }
+
+    .aboutUs__img {
+        position: relative;
+
+        .aboutUs-arrow {
+            z-index: -1;
+            position: absolute;
+            left: $aboutUsArrowLeft;
+            top: $aboutUsArrowTop;
+
+            .movePath {
+                offset-path: $aboutUsArrowMovePathOffsetPath;
+                offset-rotate: auto -45deg;
+                animation: movePath 15s linear infinite;
+            }
+        }
+
+        .aboutUs-img750,
+        .aboutUs-img320 {
+            display: none;
+        }
+    }
+
+    .aboutUs__content {
+        max-width: $aboutUsContentMaxWidth;
+        padding-left: 15px;
+
+        .aboutUs__title {
+            font-size: $aboutUsContentTitleFontSize;
+            padding-bottom: $aboutUsContentTitlePaddingBottom;
+        }
+
+        .aboutUs__subtitle {
+            font-size: $aboutUsContentSubtitleFontSize;
+            padding-bottom: $aboutUsContentSubtitlePaddingBottom;
+        }
+
+        .aboutUs__text {
+            p {
+                font-size: $aboutUsContentTextFontSize;
+                padding: $aboutUsContentTextPadding;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 540px) {
+    .aboutUs {
+        padding: $mobileAboutUsPadding;
+
+        .container {
+            @include flexbox(column, none, none);
+        }
+    }
+
+    .aboutUs__img {
+        order: 1;
+        position: relative;
+
+        svg,
+        img {
+            display: none;
+        }
+
+        .aboutUs-img750 {
+            padding-top: $mobileAboutUsImgPaddingTop;
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    .aboutUs__content {
+        .aboutUs__title {
+            font-size: $aboutUsContentTitleFontSize;
+            padding-bottom: $mobileAboutUsContentTitlePaddingBottom;
+        }
+
+        .aboutUs__subtitle {
+            font-size: $aboutUsContentSubtitleFontSize;
+        }
+
+        .aboutUs__text {
+            p {
+                font-size: $aboutUsContentTextFontSize;
+                padding-top: $aboutUsContentTextPaddingTop;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .aboutUs {
+        padding: calc(.4em + 4vw) 0 calc(.5em + 5vw) 0;
+
+        .container {
+            @include flexbox(column, none, none);
+        }
+    }
+
+    .aboutUs__img {
+        order: 1;
+        position: relative;
+
+        svg,
+        img {
+            display: none;
+        }
+
+        .aboutUs-img320 {
+            padding-top: calc(.3em + 3vw);
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    .aboutUs__content {
+        padding: 0 calc(.1em + 1vw);
+
+        .aboutUs__title {
+            font-size: calc(.4em + 4vw);
+            padding-bottom: calc(.4em + 4vw);
+        }
+
+        .aboutUs__subtitle {
+            font-size: calc(.4em + 3vw);
+        }
+
+        .aboutUs__text {
+            p {
+                font-size: calc(.2em + 2vw);
+                padding-top: calc(.4em + 3vw);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .aboutUs {
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            @include blockSize(2px, 80px);
+            background-color: rgb(136, 62, 202);
+            position: absolute;
+        }
+
+        &::before {
+            margin-left: -7px;
+            bottom: -15px;
+        }
+
+        &::after {
+            margin-left: 7px;
+            bottom: -65px;
+        }
+    }
+}

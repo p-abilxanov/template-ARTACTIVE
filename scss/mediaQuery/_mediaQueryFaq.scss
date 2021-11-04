@@ -1,0 +1,236 @@
+@media only screen and (min-width: 940px) {
+    .faq {
+        padding-bottom: $faqPaddingBottom;
+
+        .container {
+            .faq__title {
+                padding: $faqTitlePadding;
+                font-size: $faqTitleFontSize;
+            }
+        }
+    }
+
+    .faq__main {
+        @include flexbox(none, space-between, none);
+        flex-wrap: wrap;
+        padding-bottom: $faqMainPaddingBottom;
+
+        .faq__item {
+            flex-basis: $faqItemFlexBasis;
+            margin-top: $faqItemMargin;
+
+            .faqItem__title {
+                font-size: $faqItemTitleFontSize;
+                padding-bottom: $faqItemTitlePaddingBottom;
+            }
+
+            .faqItem__text {
+                font-size: $faqItemTextFontSize;
+            }
+        }
+    }
+
+    .faq__form {
+        @include flexbox(none, flex-end, none);
+        background: $faqFormBgUrl;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: $faqFormBoxShadow;
+
+        .faqForm__main {
+            flex-basis: $faqFormMainFlexBasis;
+            padding: $faqFormMainPadding;
+
+            .faqForm__subtitle {
+                font-size: $faqFormSubtitleFontSize;
+            }
+
+            .faqForm__title {
+                font-size: $faqFormTitleFontSize;
+                padding-bottom: $faqFormTitlePaddingBottom;
+            }
+
+            form {
+                @include flexbox(none, space-between, center);
+
+                input {
+                    font-size: $faqFormInputFontSize;
+                    padding: $faqFormInputPadding;
+                    margin-left: $faqFormInputMarginLeft;
+
+                    &::placeholder {
+                        font-size: $faqFormInputFontSize;
+                    }
+                }
+
+                button {
+                    font-size: $faqFormBtnFontSize;
+                    padding: $faqFormBtnPadding;
+                    border-radius: $faqFormBtnBorderRadius;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 540px) {
+    .faq {
+        padding-bottom: $faqPaddingBottom720;
+
+        .container {
+            .faq__title {
+                padding: $faqTitlePadding720;
+                font-size: $faqTitleFontSize;
+            }
+        }
+    }
+
+    .faq__main {
+        @include flexbox(column, none, none);
+        padding-bottom: $faqMainPaddingBottom720;
+
+        .faq__item {
+            flex-basis: $faqItemFlexBasis720;
+            margin-top: $faqItemMarginTop;
+
+            .faqItem__title {
+                font-size: $faqItemTitleFontSize;
+                padding-bottom: $faqItemTitlePaddingBottom;
+            }
+
+            .faqItem__text {
+                font-size: $faqItemTextFontSize;
+            }
+        }
+    }
+
+    .faq__form {
+        @include flexbox(none, none, none);
+        background: $faqFormBgUrl720;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: $faqFormBoxShadow;
+
+        .faqForm__main {
+            flex-basis: $faqFormMainFlexBasis720;
+            padding: $faqFormMainPadding720;
+
+            .faqForm__subtitle {
+                font-size: $faqFormSubtitleFontSize;
+            }
+
+            .faqForm__title {
+                font-size: $faqFormTitleFontSize;
+                padding-bottom: $faqFormTitlePaddingBottom;
+            }
+
+            form {
+                @include flexbox(none, space-between, center);
+                width: 100%;
+
+                input {
+                    width: $faqFormInputWidth;
+                    font-size: $faqFormInputFontSize;
+                    padding: $faqFormInputPadding;
+                    margin-left: $faqFormInputMarginLeft;
+
+                    &::placeholder {
+                        font-size: $faqFormInputFontSize;
+                    }
+                }
+
+                button {
+                    font-size: $faqFormBtnFontSize720;
+                    width: $faqFormInputWidth;
+                    padding: $faqFormBtnPadding720;
+                    border-radius: $faqFormBtnBorderRadius;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .faq {
+        padding-bottom: calc(.7em + 7vw);
+
+        .container {
+            .faq__title {
+                padding: calc(.4em + 4vw) 0 calc(.1em + 1vw) 0;
+                font-size: calc(.4em + 4vw);
+            }
+        }
+    }
+
+    .faq__main {
+        @include flexbox(column, none, none);
+        padding-bottom: calc(.4em + 4vw);
+
+        .faq__item {
+            flex-basis: 100%;
+            margin-top: calc(.4em + 4vw);
+
+            .faqItem__title {
+                font-size: calc(.3em + 3vw);
+                padding-bottom: calc(.3em + 3vw);
+            }
+
+            .faqItem__text {
+                font-size: calc(.2em + 2vw);
+            }
+        }
+    }
+
+    .faq__form {
+        @include flexbox(none, none, none);
+        background: url(../image/faqFormBg320.png);
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        box-shadow: 0px 23px 32px 0px rgba(81, 8, 86, 0.33);
+        margin-top: calc(.4em + 4vw);
+
+        .faqForm__main {
+            flex-basis: 100%;
+            padding: calc(.6em + 6vw) calc(.4em + 3vw);
+
+            .faqForm__subtitle {
+                width: 70%;
+                font-size: calc(.2em + 2.5vw);
+            }
+
+            .faqForm__title {
+                width: 70%;
+                font-size: calc(.3em + 3vw);
+                padding-bottom: calc(.4em + 4vw);
+            }
+
+            form {
+                @include flexbox(column, none, none);
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    font-size: calc(.2em + 2vw);
+                    padding: calc(.2em + 2vw);
+                    margin-left: calc(.1em + 1vw);
+                    margin-bottom: 20px;
+
+                    &::placeholder {
+                        font-size: calc(.2em + 2vw);
+                    }
+                }
+
+                button {
+                    margin-top: 20px;
+                    font-size: calc(.2em + 2vw);
+                    width: 100%;
+                    padding: calc(.2em + 3vw) 0;
+                    border-radius: calc(.4em + 4vw);
+                }
+            }
+        }
+    }
+}

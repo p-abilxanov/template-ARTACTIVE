@@ -1,0 +1,32 @@
+.aboutUs {
+    // overflow: hidden;
+    background: $aboutUsBgUrl;
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    @include flexbox(none, center, none);
+
+}
+
+.aboutUs__content {
+    .aboutUs__title {
+        font-family: $fontFamilyMullerExtraBoldRegular;
+        color: $aboutUsTitleColor;
+        line-height: 1.2;
+    }
+
+    .aboutUs__subtitle {
+        font-family: $fontFamilyMullerMediumRegular;
+        color: $aboutUsSubtitleColor;
+        line-height: 1.2;
+    }
+
+    .aboutUs__text {
+        p {
+            font-family: $fontFamilyOpenSansRegular;
+            color: $aboutUsTextColor;
+            line-height: 1.714;
+        }
+    }
+}

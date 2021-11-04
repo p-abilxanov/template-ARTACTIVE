@@ -1,0 +1,48 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "keyframes";
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+@import "mediaQuery/mediaQueryStyle";
+
+@import "firstPage";
+@import "mediaQuery/mediaQueryFirstPage";
+
+@import "aboutUs";
+@import "mediaQuery/mediaQueryAboutUs";
+
+@import "service";
+@import "mediaQuery/mediaQueryService";
+
+@import "interior";
+@import "mediaQuery/mediaQueryInterior";
+
+@import "polygraph";
+@import "mediaQuery/mediaQueryPolygraph";
+
+@import "comment";
+@import "mediaQuery/mediaQueryComment";
+
+@import "faq";
+@import "mediaQuery/mediaQueryFaq";
+
+@import "contact";
+@import "mediaQuery/mediaQueryContact";
+
+@import "footer";
+@import "mediaQuery/mediaQueryFooter";

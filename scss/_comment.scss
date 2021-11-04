@@ -1,0 +1,79 @@
+.comment {
+    background: $commentBgUrl;
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    .container {
+        @include flexbox(column, none, none);
+
+        .comment__title {
+            font-family: $fontFamilyMullerExtraBoldRegular;
+            color: $commentTitleColor;
+            line-height: 1.2;
+        }
+    }
+}
+
+.commment__slide {
+    position: relative;
+
+    .comment__item {
+        background-color: $commentItemBgColor;
+        border-radius: $commentItemBorderRadius;
+        box-shadow: $commentItemBoxShadow;
+        transition: box-shadow .5s;
+
+        &:hover {
+            box-shadow: $commentItemHoverBoxShadow;
+        }
+
+        .comment__img {
+            align-self: center;
+        }
+
+        .comment__content {
+            @include flexbox(column, space-between, none);
+
+            .comment__text {
+                font-family: $fontFamilyOpenSansRegular;
+                color: $commentTextColor;
+                line-height: 1.714;
+            }
+
+            .comment__name {
+                @include flexbox(column, none, flex-start);
+
+                span {
+                    font-family: $fontFamilyOpenSansSemiBold;
+                    color: $commentNameColor;
+                    line-height: 1.881;
+                }
+
+                a {
+                    font-family: $fontFamilyOpenSansSemiBold;
+                    color: $commentLinkColor;
+                    line-height: 2.15;
+                }
+            }
+        }
+    }
+
+    .slick-arrow {
+        background: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .slick-next {
+        &::after {
+            content: $commentSlickNextUrl;
+        }
+    }
+
+    .slick-prev {
+        &::after {
+            content: $commentSlickPrevUrl;
+        }
+    }
+}

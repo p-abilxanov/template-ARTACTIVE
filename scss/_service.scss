@@ -1,0 +1,498 @@
+.service {
+    @include flexbox(none, center, none);
+    overflow: hidden;
+    position: relative;
+
+    .container {
+        @include flexbox(column, none, none);
+    }
+}
+
+.service__main {
+    .service__content {
+        @include flexbox(column, none, none);
+
+        .service__subtitle {
+            font-family: $fontFamilyMullerMediumRegular;
+            color: $serviceSubtitleColor;
+            line-height: 1.2;
+        }
+
+        .service__text {
+            ul {
+                li {
+                    @include flexbox(none, none, center);
+                    font-family: $fontFamilyOpenSansRegular;
+                    color: $serviceTextColor;
+                    line-height: 1.714;
+
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        margin-right: 6px;
+                        @include blockSize(3px, 3px);
+                        border-radius: 50%;
+                        background-color: $serviceTextColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.service__title {
+    font-family: $fontFamilyMullerExtraBoldRegular;
+    color: $serviceTitleColor;
+}
+
+.service__slide {
+    @include flexbox(none, none, none);
+    position: relative;
+
+    .serviceSlide__main {
+        position: absolute;
+        left: 0;
+        @include blockSize(100%, 100%);
+
+        .serviceSlide__block {
+            position: relative;
+            @include blockSize(100%, 100%);
+            @include flexbox(column, none, center);
+
+            .slide__item {
+                position: absolute;
+                top: 0;
+                @include flexbox(column, none, none);
+
+                &:nth-last-child(n+2) {
+                    .slideItem__content {
+                        opacity: 0;
+                    }
+                }
+
+                .slideItem__content {
+                    button {
+                        background-color: none;
+                        @include flexbox(none, none, center);
+
+                        &:nth-child(1)::after {
+                            content: "";
+                            display: inline-block;
+                            background-color: $serviceItemBtnBgColor;
+                        }
+
+                        &:nth-child(2) {
+                            &::before {
+                                content: "";
+                                display: inline-block;
+                                background-color: $serviceItemBtnBgColor;
+                            }
+                        }
+
+                        i {
+                            color: $serviceItemBtnBgColor;
+                        }
+                    }
+
+                    span {
+                        font-family: $fontFamilyOpenSansRegular;
+                        color: $serviceItemSpanColor;
+                        line-height: 1.846;
+                    }
+                }
+            }
+
+            @for $i from 1 through 3 {
+                .slideItem#{$i} {
+                    @include blockSize(calc(85% + 5% * #{$i}), auto);
+                }
+            }
+        }
+    }
+}
+
+.animationLeft3 {
+    animation: animationLeft .5s linear 1;
+}
+
+.animationRight3 {
+    animation: animationRight .5s linear 1;
+}
+
+@media only screen and (min-width: 940px) {
+    .service {
+        .container {
+            padding-bottom: $servicePaddingBottom;
+        }
+    }
+
+    .service__main {
+        @include flexbox(none, space-between, none);
+
+        .service__content {
+            flex-basis: $serviceContentFlexBasis;
+            padding-bottom: $serviceContentPaddingBottom;
+
+            .service__subtitle {
+                font-size: $serviceContentSubTitleFontSize;
+                padding-bottom: $serviceContentSubTitlePaddingBottom;
+            }
+
+            .service__text {
+                padding-bottom: $serviceContentTextPaddingBottom;
+
+                ul {
+                    li {
+                        font-size: $serviceContentTextFontSize;
+                    }
+                }
+            }
+
+            .service__btn {
+                align-self: flex-start;
+                border-radius: 10px;
+                background-color: $serviceContentFormBgColor;
+                box-shadow: $serviceContentFormBoxShadow;
+                padding: $serviceContentFormPadding;
+                @include flexbox(none, space-between, none);
+
+                .serviceBtn__text {
+                    @include flexbox(column, space-between, none);
+                    padding-right: $serviceContentFormTextPaddingRight;
+
+                    span {
+                        &:nth-child(1) {
+                            font-size: $serviceContentFormTextSpanFontSize;
+                            font-family: $fontFamilyOpenSansItalic;
+                            color: rgb(255, 255, 255);
+                            line-height: 1.846;
+                        }
+
+                        &:nth-child(2) {
+                            font-size: $serviceContentFormTextSubSpanFontSize;
+                            font-family: $fontFamilyOpenSansSemiBold;
+                            color: rgb(255, 255, 255);
+                            line-height: 1.5;
+                        }
+                    }
+                }
+
+                label {
+                    align-self: center;
+                    padding: $serviceContentFormLabelPadding;
+                    border-radius: $serviceContentFormLabelBorderRadius;
+                    background-color: $serviceContentFormLabelBgColor;
+                    font-size: $serviceContentFormLabelFontSize;
+                    font-family: $fontFamilyOpenSansBold;
+                    color: rgb(255, 255, 255);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .service__title {
+        padding: $serviceTitlePadding;
+        font-size: $serviceTitleFontSize;
+    }
+
+    .service__form {
+        display: none;
+    }
+
+    .service__slide {
+        flex-basis: $serviceContentFlexBasis;
+
+        .serviceSlide__main {
+            top: $serviceSlideMainTop;
+
+            .serviceSlide__block {
+                .slide__item {
+                    .slideItem__content {
+                        @include flexbox(none, none, none);
+                        padding-top: $serviceSlideItemContentPaddingTop;
+
+                        button {
+                            &:nth-child(1)::after {
+                                @include blockSize($serviceSlideItemContentBtnWidth, $serviceSlideItemContentBtnHeight);
+                            }
+
+                            &:nth-child(2) {
+                                margin-left: $serviceSlideItemContentBtnMarginLeft;
+
+                                &::before {
+                                    @include blockSize($serviceSlideItemContentBtnWidth, $serviceSlideItemContentBtnHeight);
+                                }
+                            }
+                        }
+
+                        span {
+                            margin-left: $serviceSlideItemContentBtnMarginLeft;
+                            font-size: $serviceSlideItemContentSpanFontSize;
+                        }
+                    }
+                }
+
+                @for $i from 1 through 3 {
+                    .slideItem#{$i} {
+                        top: calc(15px * #{$i - 1});
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 939px) and (min-width:540px) {
+    .service {
+        .container {
+            padding-bottom: $servicePaddingBottom;
+        }
+    }
+
+    .service__main {
+        @include flexbox(column, none, none);
+
+        .service__content {
+            padding-bottom: $mobileServiceContentPaddingBottom;
+
+            .service__subtitle {
+                width: 80%;
+                font-size: $serviceContentSubTitleFontSize;
+                padding-bottom: $mobileServiceContentSubTitlePaddingBottom;
+            }
+
+            .service__text {
+                padding-bottom: $mobileServiceContentTextPaddingBottom;
+
+                ul {
+                    li {
+                        font-size: $serviceContentTextFontSize;
+                    }
+                }
+            }
+
+            .service__btn {
+                display: none;
+            }
+        }
+    }
+
+    .service__title {
+        padding: $serviceTitlePadding;
+        font-size: $serviceTitleFontSize;
+    }
+
+    .service__form {
+        border-radius: 10px;
+        background-color: $serviceContentFormBgColor;
+        box-shadow: $serviceContentFormBoxShadow;
+        padding: $mobileServiceContentFormPadding;
+        @include flexbox(none, space-between, center);
+
+        .serviceBtn__text {
+            @include flexbox(none, none, center);
+
+            span {
+                &:nth-child(1) {
+                    font-size: $mobileServiceContentFormTextSpanFontSize;
+                    font-family: $fontFamilyOpenSansItalic;
+                    color: rgb(255, 255, 255);
+                    padding-right: $mobileServiceContentFormTextPaddingRight;
+                }
+
+                &:nth-child(2) {
+                    font-size: $mobileServiceContentFormTextSubSpanFontSize;
+                    font-family: $fontFamilyOpenSansSemiBold;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        label {
+            align-self: center;
+            padding: $mobileServiceContentFormLabelPadding;
+            border-radius: $serviceContentFormLabelBorderRadius;
+            background-color: $serviceContentFormLabelBgColor;
+            font-size: $mobileServiceContentFormLabelFontSize;
+            font-family: $fontFamilyOpenSansBold;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+        }
+    }
+
+    .service__slide {
+        height: $mobileServiceSlideHeight;
+
+        .serviceSlide__main {
+            .serviceSlide__block {
+                .slide__item {
+                    .slideItem__content {
+                        @include flexbox(none, space-between, center);
+                        padding-top: $serviceSlideItemContentPaddingTop;
+
+                        button {
+                            background: none;
+
+                            &:nth-child(1)::after {
+                                @include blockSize($serviceSlideItemContentBtnWidth, $serviceSlideItemContentBtnHeight);
+                            }
+
+                            &:nth-child(2) {
+                                margin-left: $serviceSlideItemContentBtnMarginLeft;
+
+                                &::before {
+                                    @include blockSize($serviceSlideItemContentBtnWidth, $serviceSlideItemContentBtnHeight);
+                                }
+                            }
+                        }
+
+                        span {
+                            margin-left: $serviceSlideItemContentBtnMarginLeft;
+                            font-size: $serviceSlideItemContentSpanFontSize;
+                        }
+                    }
+                }
+
+                @for $i from 1 through 3 {
+                    .slideItem#{$i} {
+                        top: calc(15px * #{$i - 1});
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 539px) {
+    .service {
+        .container {
+            padding-bottom: calc(.5em + 5vw);
+        }
+    }
+
+    .service__main {
+        @include flexbox(column, none, none);
+
+        .service__content {
+            padding-bottom: calc(.4em + 4vw);
+
+            .service__subtitle {
+                width: 80%;
+                font-size: calc(.4em + 4vw);
+                padding-bottom: calc(.4em + 4vw);
+            }
+
+            .service__text {
+                padding-bottom: calc(.4em + 4vw);
+
+                ul {
+                    li {
+                        font-size: calc(.2em + 2vw);
+                    }
+                }
+            }
+
+            .service__btn {
+                display: none;
+            }
+        }
+    }
+
+    .service__title {
+        padding: calc(.5em + 5vw) 0;
+        font-size: calc(.4em + 4vw);
+    }
+
+    .service__form {
+        border-radius: 10px;
+        background-color: rgb(136, 62, 202);
+        box-shadow: 0px 23px 32px 0px rgba(81, 8, 86, 0.33);
+        padding: calc(.4em + 4vw) calc(.3em + 3vw);
+        @include flexbox(column, none, none);
+
+        .serviceBtn__text {
+            @include flexbox(column, none, none);
+            padding-bottom: calc(.4em + 4vw);
+
+            span {
+                &:nth-child(1) {
+                    font-size: calc(.2em + 2vw);
+                    font-family: $fontFamilyOpenSansItalic;
+                    color: rgb(255, 255, 255);
+                    padding-right: calc(.4em + 4vw);
+                    padding-bottom: calc(.1em + 1vw);
+                }
+
+                &:nth-child(2) {
+                    font-size: calc(.2em + 3vw);
+                    font-family: $fontFamilyOpenSansSemiBold;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        label {
+            text-align: center;
+            padding: calc(.2em + 2vw) calc(.4em + 4vw);
+            border-radius: calc(.5em + 5vw);
+            background-color: rgb(251, 2, 117);
+            font-size: calc(.2em + 3vw);
+            font-family: $fontFamilyOpenSansBold;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+        }
+    }
+
+    .service__slide {
+        height: calc(85vw + 5em);
+
+        .serviceSlide__main {
+            .serviceSlide__block {
+                .slide__item {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .slideItem__content {
+                        @include flexbox(none, space-evenly, none);
+                        flex-wrap: wrap;
+                        padding-top: calc(.4em + 4vw);
+
+                        button {
+                            order: 1;
+                            background: none;
+
+                            &:nth-child(1)::after {
+                                @include blockSize(calc(2em + 8vw), 2px);
+                            }
+
+                            &:nth-child(2) {
+                                margin-left: calc(.4em + 4vw);
+
+                                &::before {
+                                    @include blockSize(calc(2em + 8vw), 2px);
+                                }
+                            }
+                        }
+
+                        span {
+                            padding-bottom: calc(.3em + 3vw);
+                            flex-basis: 100%;
+                            font-size: calc(.2em + 2vw);
+                        }
+                    }
+                }
+
+                @for $i from 1 through 3 {
+                    .slideItem#{$i} {
+                        top: calc(calc(.1em + 1vw) * #{$i - 1});
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@media only screen and (min-width: 940px) {
+    .interior {
+        background: $interiorBgUrl;
+        background-repeat: no-repeat;
+        background-position: $interiorBgPosition;
+        background-size: $interiorBgSize;
+        padding: $interiorPadding;
+
+        .container {
+            @include flexbox(none, flex-end, none);
+        }
+    }
+
+    .interior__main {
+        max-width: 560px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    .interior__main {
+        .interior__title {
+            font-size: $interiorTitleFontSize;
+            padding-bottom: $interiorTitlePaddingBottom;
+        }
+
+        .interior__text {
+            font-size: $interiorTextFontSize;
+            padding-bottom: $interiorTextPaddingBottom;
+        }
+
+        label {
+            border-radius: $interiorBtnBorderRadius;
+            font-size: $interiorBtnFontSize;
+            padding: $interiorBtnPadding;
+        }
+    }
+}
+
+@media only screen and (max-width: 939px) and (min-width: 540px) {
+    .interior {
+        background: $interiorBgUrl720;
+        background-repeat: no-repeat;
+        background-position: $interiorBgPosition720;
+        background-size: $interiorBgSize720;
+        padding: $interiorPadding720;
+
+        .container {
+            @include flexbox(none, none, none);
+        }
+    }
+
+    .interior__main {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    .interior {
+        background: url(../image/Интерьер320.png), url(../image/line.png);
+        background-repeat: no-repeat;
+        background-position: center center, center center;
+        background-size: 100% 100%, auto auto;
+        padding: calc(.6em + 6vw) 0 calc(1em + 80vw) 0;
+
+        .container {
+            @include flexbox(none, none, none);
+        }
+    }
+
+    .interior__main {
+        .interior__title {
+            font-size: calc(.4em + 4vw);
+            padding-bottom: calc(.4em + 5vw);
+        }
+
+        .interior__text {
+            font-size: calc(.2em + 2vw);
+            padding-bottom: calc(.4em + 5vw);
+        }
+
+        label {
+            border-radius: calc(.5em + 5vw);
+            font-size: calc(.2em + 2.5vw);
+            padding: calc(.2em + 2vw) calc(.4em + 4vw);
+        }
+    }
+}
